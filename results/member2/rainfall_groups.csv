@@ -1,0 +1,23 @@
+state,total_rainfall_mm,yield,rainfall_group
+Andhra Pradesh,1027.8,3.517692308,Lower_or_equal
+Arunachal Pradesh,2411.52,1.7792,Higher
+Chhattisgarh,1567.15,1.936428571,Higher
+Delhi,618.71,3.01,Lower_or_equal
+Goa,3627.84,2.475,Higher
+Gujarat,977.56,1.948571429,Lower_or_equal
+Haryana,1138.97,3.048095238,Lower_or_equal
+Himachal Pradesh,1189.51,1.656363636,Lower_or_equal
+Jammu and Kashmir,1323.46,2.0755,Higher
+Jharkhand,1350.34,2.663333333,Higher
+Karnataka,818.07,2.924,Lower_or_equal
+Madhya Pradesh,1870.12,1.858,Higher
+Maharashtra,3387.29,1.256296296,Higher
+Mizoram,3082.44,2.2025,Higher
+Nagaland,1569.19,2.459090909,Higher
+Puducherry,1060.94,3.216666667,Lower_or_equal
+Punjab,1138.97,3.930909091,Lower_or_equal
+Sikkim,1606.09,1.8225,Higher
+Telangana,753.33,3.575625,Lower_or_equal
+Tripura,3054.79,1.06875,Higher
+Uttar Pradesh,1300.6,2.823466667,Lower_or_equal
+Uttarakhand,1188.05,1.933846154,Lower_or_equal
