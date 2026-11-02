@@ -28,7 +28,6 @@ def explore_dataset(df):
     print(df.describe())
 
 
-# Execute the program
 if __name__ == "__main__":
     data = load_dataset()
     explore_dataset(data)
