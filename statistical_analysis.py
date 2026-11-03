@@ -90,10 +90,8 @@ def run_analysis():
     interval = test.confidence_interval()
     if test.pvalue < 0.05:
         decision = "Reject H0"
-        finding = "The groups show evidence of different mean yields under the test assumptions."
     else:
         decision = "Do not reject H0"
-        finding = "There is not enough evidence of different mean yields."
     rice.groupby("rainfall_group")["yield"].agg(
         ["count", "mean", "median", "std", "min", "max", "skew"]
     ).to_csv(save_folder / "rainfall_group_summary.csv")
@@ -130,30 +128,14 @@ def run_analysis():
     rates["pesticide_per_area"] = (crop["pesticide"] / crop["area"]).round(6)
     rates.groupby("year").nunique().to_csv(save_folder / "input_rate_checks.csv")
 
-    report = f"""MEMBER 2 - STATISTICAL FINDINGS
-Full dataset: {len(crop)} crop records. Original CSV files are unchanged.
-The descriptive statistics files contain mean, median, mode, sample variance and standard deviation.
-Each source is summarised separately. Different crop scales make the overall mean unsuitable as national yield.
-All tied repeated modes are saved. No repeated value means no useful repeated mode.
-Rice, Kharif, 2019: {len(rice)} state/UT records; average yield = {rice['yield'].mean():.6f}.
-Correlations with yield:
-{correlations.round(6).to_string()}
-Positive means values tend to rise together; negative means they tend to move in opposite directions.
-Near zero means little linear (Pearson) or rank (Spearman) relationship. These are not tests of causation.
-H0: equal population mean yields in the two rainfall groups. H1: different population mean yields.
-Rainfall split = {middle:.2f} mm, the sample median, not a recommended rainfall level.
-Lower/equal group: {len(low)} records, mean = {low.mean():.6f}. Higher group: {len(high)} records, mean = {high.mean():.6f}.
-Welch two-sided t-test: t = {test.statistic:.6f}, p = {test.pvalue:.8f}; cutoff = 0.05; {decision}.
-95% interval for the mean difference: [{interval.low:.6f}, {interval.high:.6f}].
-{finding}
-The test assumes independent observations and approximately normal yields in the small groups.
-States can share conditions; they are not a random sample, and other differences are uncontrolled.
-2019 is used because 2020 has only 37 crop records. Findings concern this selected comparison.
-Weather is annual; soil has no year. Haryana and Punjab have identical supplied weather series.
-Fertilizer and pesticide per-area rates are shared within years, so their separate effects cannot be identified.
-Yield values are used as supplied; units and data collection methods were not independently verified.
-Do not conclude that reducing rainfall improves yield; irrigation and other possible explanations were not tested.
-"""
+    report = f"Rice Kharif 2019: {len(rice)} records\n"
+    report += f"Average yield: {rice['yield'].mean():.6f}\n"
+    report += f"Rainfall cutoff: {middle:.2f} mm\n"
+    report += f"Lower/equal rainfall: n={len(low)}, mean={low.mean():.6f}\n"
+    report += f"Higher rainfall: n={len(high)}, mean={high.mean():.6f}\n"
+    report += f"Welch test: t={test.statistic:.6f}, p={test.pvalue:.8f}, {decision}\n"
+    report += f"95% interval: [{interval.low:.6f}, {interval.high:.6f}]\n"
+    report += "\nYield correlations:\n" + correlations.round(6).to_string()
     for file in ["hitans_findings.txt", "member2_findings.txt"]:
         (save_folder / file).write_text(report, encoding="utf-8")
     print(report)
