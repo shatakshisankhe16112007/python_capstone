@@ -1,0 +1,2 @@
+test,alternative,rainfall_cutoff_mm,n_lower,n_higher,mean_lower,mean_higher,difference_lower_minus_higher,t_statistic,degrees_of_freedom,p_value,alpha,decision,difference_ci95_lower,difference_ci95_upper
+Welch independent two-sample t-test,two-sided,1312.03,11,11,2.8713851081818187,1.963327191727273,0.9080579164545457,3.3989872115139828,17.474375578929706,0.0033084740127776696,0.05,Reject H0,0.34557255901466666,1.4705432738944246

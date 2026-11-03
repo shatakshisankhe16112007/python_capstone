@@ -1,0 +1,9 @@
+crop,model,holdout_rmse,holdout_mae
+Rice,Baseline (Last Value),0.1288,0.1211
+Rice,"ARIMA(1, 1, 0)",0.1253,0.1173
+Wheat,Baseline (Last Value),0.2165,0.2077
+Wheat,"ARIMA(1, 1, 0)",0.2047,0.1958
+Maize,Baseline (Last Value),0.149,0.1194
+Maize,"ARIMA(2, 1, 0)",0.1411,0.115
+Sugarcane,Baseline (Last Value),6.9097,5.8718
+Sugarcane,"ARIMA(0, 1, 0)",6.9097,5.8718

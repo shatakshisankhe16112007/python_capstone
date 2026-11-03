@@ -1,0 +1,5 @@
+model,train_r2,train_rmse,train_mae,test_r2,test_rmse,test_mae
+Baseline (Crop Mean),0.8144,0.6525,0.4771,0.7756,0.6881,0.5183
+Model 1 (Factors Only),0.0074,1.5089,1.0411,0.0018,1.4515,0.9794
+Model 2 (Factors + Crop Fixed Effects),0.8193,0.6438,0.471,0.7779,0.6847,0.5171
+Model 3 (Expanded Soil & Weather),0.8308,0.6231,0.4484,0.7887,0.6678,0.4994

@@ -1,0 +1,20 @@
+model,feature,coefficient
+Model 1: Numeric Factors Only,intercept,-0.499106
+Model 1: Numeric Factors Only,log_area,0.039012
+Model 1: Numeric Factors Only,fert_per_ha,0.00283
+Model 1: Numeric Factors Only,pest_per_ha,0.469506
+Model 2: Factors + Fixed Effects,intercept,-0.989189
+Model 2: Factors + Fixed Effects,log_area,0.052211
+Model 2: Factors + Fixed Effects,fert_per_ha,0.003441
+Model 2: Factors + Fixed Effects,pest_per_ha,0.409562
+Model 3: Expanded Soil & Weather,intercept,-0.191538
+Model 3: Expanded Soil & Weather,log_area,0.051927
+Model 3: Expanded Soil & Weather,fert_per_ha,0.003047
+Model 3: Expanded Soil & Weather,pest_per_ha,0.462123
+Model 3: Expanded Soil & Weather,n,0.006336
+Model 3: Expanded Soil & Weather,p,0.015433
+Model 3: Expanded Soil & Weather,k,0.00112
+Model 3: Expanded Soil & Weather,ph,-0.208032
+Model 3: Expanded Soil & Weather,avg_temp_c,-0.035221
+Model 3: Expanded Soil & Weather,total_rainfall_mm,-2e-06
+Model 3: Expanded Soil & Weather,avg_humidity_percent,0.006212

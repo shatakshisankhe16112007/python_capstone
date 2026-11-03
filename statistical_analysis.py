@@ -1,7 +1,8 @@
-"""Member 2: descriptive statistics, correlations and one hypothesis test.
+"""Statistical Analysis, correlations, and hypothesis testing.
+Author: Hitans Sangrajka (Python Programming Laboratory)
 
 Run: python statistical_analysis.py
-Inputs stay unchanged. Results are saved under results/member2/.
+Inputs stay unchanged. Results are saved under results/statistical_analysis/.
 """
 
 from pathlib import Path
@@ -10,17 +11,16 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "dataset"
-RESULTS_DIR = BASE_DIR / "results" / "member2"
+RESULTS_DIR = BASE_DIR / "results" / "statistical_analysis"
 
 
 def load_csv(filename, keys):
     """Read a copy, standardise names and check the expected row identifiers."""
     data = pd.read_csv(DATA_DIR / filename)
     data.columns = data.columns.str.strip().str.lower()
-    for column in data.select_dtypes(include="object"):
+    for column in data.select_dtypes(include=["object", "string"]):
         data[column] = data[column].str.strip()
     if data.isna().any().any() or data.duplicated(keys).any():
         raise ValueError(f"Check missing values or duplicate keys in {filename}.")
@@ -58,7 +58,7 @@ def run_analysis():
     weather = load_csv("state_weather_data_1997_2020.csv", ["state", "year"])
 
     # 1. Summarise each source at its own level. Do not repeat soil/weather
-    # measurements for every crop row when calculating their statistics.
+    # rows across crops before describing what is in the provided files.
     summaries = pd.concat({
         "crop": descriptive_statistics(crop),
         "soil": descriptive_statistics(soil),
@@ -146,7 +146,7 @@ def run_analysis():
         if test.pvalue < alpha else
         "There is insufficient evidence of different group mean yields at the 5% level."
     )
-    report = f"""MEMBER 2 - STATISTICAL FINDINGS
+    report = f"""HITANS SANGRAJKA - STATISTICAL FINDINGS
 
 Scope
 Crop file: {len(crop):,} rows; {crop['crop'].nunique()} crops;
@@ -229,9 +229,11 @@ Statistical significance does not establish practical importance or causation.
 Method reference:
 https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html
 """
+    (RESULTS_DIR / "hitans_findings.txt").write_text(report, encoding="utf-8")
     (RESULTS_DIR / "member2_findings.txt").write_text(report, encoding="utf-8")
     print(report)
     print(f"Saved results to: {RESULTS_DIR}")
+    return focus, test, correlations
 
 
 if __name__ == "__main__":
