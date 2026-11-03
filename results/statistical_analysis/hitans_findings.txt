@@ -1,31 +1,10 @@
-HITANS SANGRAJKA - STATISTICAL FINDINGS
-
-Scope
-Crop file: 19,689 rows; 55 crops;
-30 state/UT labels; 1997-2020.
-Soil file: 30 state rows. Weather file: 720 state-year rows.
-No missing cells or duplicate analysis keys were found after trimming text.
-All 22 selected crop rows matched both the soil and weather files.
-Original CSV files were not modified; no outliers were removed or values imputed.
-
-1. DESCRIPTIVE STATISTICS
-All crop records, supplied yield values:
-Mean = 79.954009; median = 1.030000;
-mode = 1; sample variance = 771421.768059;
-sample standard deviation = 878.306193.
-The large mean-median gap and SD show that high values dominate this pooled
-summary. Crop scales differ, so this is NOT a national agricultural yield.
-See yield_by_crop.csv for separate crop summaries.
-
-Rice, Kharif, 2019 (22 states, equal weight per state):
-Mean = 2.417356; median = 2.330795;
-mode = No repeated value; sample variance = 0.589812;
-sample standard deviation = 0.767992.
-These summaries retain the dataset's yield units. Variance has squared units.
-No repeated value means no useful repeated mode; the code does not select
-an arbitrary first value. All tied repeated modes are retained.
-
-2. CORRELATIONS WITH YIELD - RICE, KHARIF, 2019
+MEMBER 2 - STATISTICAL FINDINGS
+Full dataset: 19689 crop records. Original CSV files are unchanged.
+The descriptive statistics files contain mean, median, mode, sample variance and standard deviation.
+Each source is summarised separately. Different crop scales make the overall mean unsuitable as national yield.
+All tied repeated modes are saved. No repeated value means no useful repeated mode.
+Rice, Kharif, 2019: 22 state/UT records; average yield = 2.417356.
+Correlations with yield:
                       pearson_r  spearman_rho   n
 area                   0.244705      0.264822  22
 production             0.428881      0.340486  22
@@ -38,56 +17,18 @@ n                      0.620151      0.636698  22
 p                      0.624994      0.677047  22
 k                      0.006408      0.013057  22
 ph                     0.494064      0.517514  22
-
-Positive coefficients mean higher values tend to occur together; negative
-coefficients mean higher values tend to accompany lower yield. Values near
-zero indicate little linear (Pearson) or monotonic (Spearman) association.
-Rainfall has a negative association; N and P have positive associations.
-K has little linear association. These are descriptive, unadjusted comparisons:
-no significance claim is made for the individual correlation coefficients.
-Fertilizer and pesticide totals are area-scaled yearly rates in this dataset.
-Their correlations therefore cannot separate application effects from area.
-Production and yield are also related agricultural quantities, not independent
-experimental treatments. None of these coefficients proves causation.
-
-3. HYPOTHESIS TEST
-Question: Does mean Rice-Kharif 2019 yield differ between the two rainfall groups?
-H0: The two groups have equal population mean yield.
-H1: The two groups have different population mean yields.
-Test: two-sided Welch independent two-sample t-test; alpha = 0.05.
-Lower/equal rainfall: <= 1312.03 mm; higher rainfall: > 1312.03 mm.
-This is the selected sample's median, not an agronomic rainfall threshold.
-Group sizes: 11 and 11.
-Group mean yields: 2.871385 and 1.963327.
-Difference (lower minus higher): 0.908058.
-95% confidence interval for the mean difference: [0.345573, 1.470543].
-t = 3.398987; df = 17.474376; p = 0.00330847.
-Decision: Reject H0. The group mean yields differ at the 5% level under the test assumptions.
-For these data the lower-rainfall group has the larger observed mean.
-This does NOT show that reducing rainfall would improve yield.
-
-Why this test and subset?
-One crop, season and year makes the comparison more coherent than mixing crops.
-Each state appears once; repeated years are not treated as independent samples.
-Welch compares two means without assuming equal group variances.
-The small groups require approximately normal yield distributions without
-extreme outliers; the saved group summaries show only mild sample skewness.
-Normality is not established by that check. State independence is an assumption:
-nearby states and shared policies/weather can produce dependence.
-
-4. LIMITATIONS
-This is an exploratory observational classroom analysis, not a causal estimate.
-The available states are not a random sample; generalisation is limited.
-Only 22 states are represented in the chosen subset, not all 30 source labels.
-2020 is sparse (37 crop rows), so 2019 is used for the focused analysis.
-Soil has one fixed value per state with no observation year. Weather is annual,
-not Kharif-specific. Measurement provenance and all crop/soil units are unverified.
-Haryana and Punjab have identical weather series in the supplied weather file;
-their values are retained, but this further limits source-quality confidence.
-Supplied yield often differs from production/area, so it is not recalculated.
-Irrigation, crop varieties and other state differences are not controlled.
-The median split loses rainfall detail; continuous correlations are also shown.
-Statistical significance does not establish practical importance or causation.
-
-Method reference:
-https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html
+Positive means values tend to rise together; negative means they tend to move in opposite directions.
+Near zero means little linear (Pearson) or rank (Spearman) relationship. These are not tests of causation.
+H0: equal population mean yields in the two rainfall groups. H1: different population mean yields.
+Rainfall split = 1312.03 mm, the sample median, not a recommended rainfall level.
+Lower/equal group: 11 records, mean = 2.871385. Higher group: 11 records, mean = 1.963327.
+Welch two-sided t-test: t = 3.398987, p = 0.00330847; cutoff = 0.05; Reject H0.
+95% interval for the mean difference: [0.345573, 1.470543].
+The groups show evidence of different mean yields under the test assumptions.
+The test assumes independent observations and approximately normal yields in the small groups.
+States can share conditions; they are not a random sample, and other differences are uncontrolled.
+2019 is used because 2020 has only 37 crop records. Findings concern this selected comparison.
+Weather is annual; soil has no year. Haryana and Punjab have identical supplied weather series.
+Fertilizer and pesticide per-area rates are shared within years, so their separate effects cannot be identified.
+Yield values are used as supplied; units and data collection methods were not independently verified.
+Do not conclude that reducing rainfall improves yield; irrigation and other possible explanations were not tested.
