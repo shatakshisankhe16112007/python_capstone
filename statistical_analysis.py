@@ -1,10 +1,12 @@
 from pathlib import Path
 import pandas as pd
+import matplotlib.pyplot as plt
 from scipy import stats
 
 folder = Path(__file__).resolve().parent
 data_folder = folder / "dataset"
 save_folder = folder / "results" / "statistical_analysis"
+graph_folder = folder / "output_graphs" / "statistical_analysis"
 
 
 def read_data(file, keys):
@@ -107,6 +109,21 @@ def run_analysis():
         "p_value": test.pvalue, "alpha": 0.05, "decision": decision,
         "difference_ci95_lower": interval.low, "difference_ci95_upper": interval.high
     }]).to_csv(save_folder / "hypothesis_test.csv", index=False)
+
+    graph_folder.mkdir(parents=True, exist_ok=True)
+    names = [f"Lower/equal rainfall\n{len(low)} state/UT records", f"Higher rainfall\n{len(high)} state/UT records"]
+    values = [low.mean(), high.mean()]
+    plt.figure(figsize=(7, 5))
+    bars = plt.bar(names, values, color="#3B6FB6", width=0.55)
+    plt.bar_label(bars, fmt="%.2f", padding=5)
+    plt.title("Average rice yield by rainfall group\nKharif 2019")
+    plt.ylabel("Average yield (dataset units)")
+    plt.xlabel(f"Annual rainfall split at {middle:.2f} mm")
+    plt.ylim(0, max(values) * 1.2)
+    plt.figtext(0.5, 0.02, "Observed state averages; this does not prove rainfall causes yield.", ha="center", fontsize=9)
+    plt.tight_layout(rect=[0, 0.05, 1, 1])
+    plt.savefig(graph_folder / "rainfall_group_yield.png", dpi=160)
+    plt.close()
 
     rates = crop[["year"]].copy()
     rates["fertilizer_per_area"] = (crop["fertilizer"] / crop["area"]).round(6)

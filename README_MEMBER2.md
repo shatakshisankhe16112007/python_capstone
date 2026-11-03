@@ -22,7 +22,7 @@ Use `python main.py` to run the complete team project. Results are saved in `res
 5. `pearson` and `spearman` measure how the factors move with yield.
 6. `low` and `high` contain yields from the two rainfall groups. A Welch t-test compares their means.
 
-There are no handwritten statistical formulas or code comments. Pandas and SciPy do the calculations. The code uses ordinary functions, loops, lists and `if` statements. Direct arithmetic is used only for input rates and the difference between group means.
+There are no handwritten statistical formulas or code comments. Pandas and SciPy do the calculations. The code uses ordinary functions, loops, lists and `if` statements. Matplotlib draws the graph using the already calculated group means.
 
 ## Results to explain
 
@@ -31,6 +31,17 @@ The focused comparison contains 22 state/UT records, with mean yield 2.417356. R
 Splitting rainfall at the sample median, 1312.03 mm, gives 11 records per group. Average yields are 2.871385 for the lower/equal rainfall group and 1.963327 for the higher group. The two-sided Welch test gives p = 0.00330847, below the 0.05 cutoff. Under its assumptions, this supports a difference between the group means.
 
 This does not prove rainfall caused the difference or that less water improves yield. Weather is annual, soil has no year, the states are not a random sample, and irrigation was not tested. Yield units are used as supplied and were not independently verified.
+
+## My simple graph
+
+![Average rice yield by rainfall group](output_graphs/statistical_analysis/rainfall_group_yield.png)
+
+The script also saves `output_graphs/statistical_analysis/rainfall_group_yield.png`.
+The two bars show the average yield of the same two rainfall groups used in the t-test: **2.87** for lower/equal rainfall and **1.96** for higher rainfall, with **11 state/UT records per group**.
+
+`names` stores the labels, `values` stores the two means, `plt.bar()` draws the bars and `plt.savefig()` saves the picture. The axis starts at zero. The chart shows observed averages, not a causal effect of rainfall.
+
+For the viva: "I split the selected rice records into two rainfall groups, calculated their average yields, and plotted those averages as two bars. I used the t-test to check the difference."
 
 ## How this fits the team
 
