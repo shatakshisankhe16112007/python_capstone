@@ -36,6 +36,7 @@ python_capstone/
 │   └── state_weather_data_1997_2020.csv    # Annual state weather dataset (720 rows, 5 cols)
 ├── output_graphs/
 │   ├── visualization/                      # 3 four-panel dashboards (12 subplots) by Shatakshi Sankhe
+│   ├── statistical_analysis/               # Rainfall-group yield comparison bar chart by Hitans Sangrajka
 │   ├── regression/                         # 3 regression scatter, correlation & residual plots
 │   └── forecasting/                        # 4 time series stationarity, smoothing & ARIMA forecast plots
 ├── results/
@@ -120,7 +121,7 @@ python forecasting.py
   1. `figure1_regional_production.png`: Regional Crop Production Analysis (Total production by region, Top 6 crops across regions, Average crop production heatmap, and Seasonal production by region).
   2. `figure2_agricultural_relationships.png`: Agricultural Factor Relationships (Fertilizer vs. yield, Pesticide vs. yield, Cultivated area vs. production bubble chart, and Correlation heatmap).
   3. `figure3_yield_seasonal_analysis.png`: Crop Yield and Seasonal Analysis (Yield distribution across regions, Yield across seasons violin plot, Yearly yield trends across regions, and Regional yield by season boxplots).
-- The full suite of 20 graphs and regional factor charts contributed by Shatakshi (including `figure1` to `figure4`, `average_yield_by_crop.png`, `crop_yield_by_season.png`, `crop_yield_distribution.png`, and individual factor plots `graph1` to `graph12`) is fully preserved in `output_graphs/visualization/`.
+- The 3 standardized four-panel dashboards contributed by Shatakshi (`figure1_regional_production.png`, `figure2_agricultural_relationships.png`, and `figure3_yield_seasonal_analysis.png`) are saved in `output_graphs/` and mirrored in `output_graphs/visualization/`.
 
 ### Module 3: `statistical_analysis.py` (Hitans Sangrajka)
 - Computes parametric and non-parametric descriptive statistics (mean, median, mode preserving ties, sample variance, standard deviation) across crop, soil, and weather sources.

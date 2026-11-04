@@ -18,7 +18,7 @@ RESULTS_DIR = BASE_DIR / "results"
 
 def ensure_directories():
     """Create all required output directories if they do not exist."""
-    for sub in ["data_cleaning", "visualization", "statistical_analysis", "regression", "forecasting"]:
+    for sub in ["visualization", "statistical_analysis", "regression", "forecasting"]:
         (OUTPUT_DIR / sub).mkdir(parents=True, exist_ok=True)
         (RESULTS_DIR / sub).mkdir(parents=True, exist_ok=True)
 

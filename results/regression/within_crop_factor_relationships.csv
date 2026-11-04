@@ -1,4 +1,0 @@
-factor,pearson_r_all_crops,spearman_rho_all_crops,pearson_r_within_crop,regression_slope,pct_yield_impact_per_std
-log_area,0.0817,0.0902,0.0864,0.02017,5.6
-fert_per_ha,0.0558,0.0808,0.1699,0.00412,11.31
-pest_per_ha,0.045,0.0788,0.1323,1.14171,8.7

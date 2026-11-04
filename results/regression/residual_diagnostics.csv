@@ -1,7 +1,0 @@
-metric,value
-Residual Mean,0.056997
-Residual Variance,0.337486
-Residual Skewness,-0.0247
-Residual Kurtosis,3.7272
-Shapiro-Wilk Test Statistic,0.9497
-Paired t-test (vs Baseline),-23.3313

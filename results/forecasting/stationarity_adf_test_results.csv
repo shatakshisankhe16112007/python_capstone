@@ -1,5 +1,0 @@
-crop,observations,raw_adf_statistic,raw_adf_pvalue,raw_status,differenced_adf_statistic,differenced_adf_pvalue,differenced_status
-Rice,23,0.0805,0.9647,Non-Stationary (p>=0.05),5.9282,1.0,Non-Stationary (p>=0.05)
-Wheat,23,0.1336,0.9683,Non-Stationary (p>=0.05),-6.78,0.0,Stationary (p<0.05)
-Maize,23,4.286,1.0,Non-Stationary (p>=0.05),1.1549,0.9957,Non-Stationary (p>=0.05)
-Sugarcane,23,-1.278,0.6392,Non-Stationary (p>=0.05),-0.4567,0.9002,Non-Stationary (p>=0.05)

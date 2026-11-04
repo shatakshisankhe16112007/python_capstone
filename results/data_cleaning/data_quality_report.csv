@@ -1,4 +1,0 @@
-dataset,rows,columns,missing_values,duplicates,numeric_columns,text_columns
-crop_yield.csv,19689,9,0,0,6,3
-state_soil_data.csv,30,5,0,0,4,1
-state_weather_data_1997_2020.csv,720,5,0,0,4,1

@@ -38,8 +38,15 @@ def run_shatakshi_visualization():
     # Organize outputs into the agreed subfolder
     sub_dir = BASE_DIR / "output_graphs" / "visualization"
     sub_dir.mkdir(parents=True, exist_ok=True)
-    for src in (BASE_DIR / "output_graphs").glob("*.png"):
-        shutil.copy2(src, sub_dir / src.name)
+    dashboards = [
+        "figure1_regional_production.png",
+        "figure2_agricultural_relationships.png",
+        "figure3_yield_seasonal_analysis.png",
+    ]
+    for name in dashboards:
+        src = BASE_DIR / "output_graphs" / name
+        if src.exists():
+            shutil.copy2(src, sub_dir / name)
 
 
 def execute_pipeline():
