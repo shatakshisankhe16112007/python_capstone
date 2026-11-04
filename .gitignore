@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Project Report directory (Academic report files and scripts excluded from repo)
+project_report/

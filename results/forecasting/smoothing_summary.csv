@@ -1,0 +1,5 @@
+crop,mean_yield,sma_mad,ewma_mad,more_responsive
+Rice,2.189,0.0475,0.0399,EWMA
+Wheat,1.675,0.0711,0.0496,EWMA
+Maize,1.881,0.0739,0.0565,EWMA
+Sugarcane,54.163,1.6102,1.2051,EWMA

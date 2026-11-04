@@ -1,0 +1,34 @@
+MEMBER 2 - STATISTICAL FINDINGS
+Full dataset: 19689 crop records. Original CSV files are unchanged.
+The descriptive statistics files contain mean, median, mode, sample variance and standard deviation.
+Each source is summarised separately. Different crop scales make the overall mean unsuitable as national yield.
+All tied repeated modes are saved. No repeated value means no useful repeated mode.
+Rice, Kharif, 2019: 22 state/UT records; average yield = 2.417356.
+Correlations with yield:
+                      pearson_r  spearman_rho   n
+area                   0.244705      0.264822  22
+production             0.428881      0.340486  22
+fertilizer             0.244705      0.264822  22
+pesticide              0.244705      0.264822  22
+avg_temp_c             0.274020      0.334934  22
+total_rainfall_mm     -0.570973     -0.654617  22
+avg_humidity_percent  -0.280564     -0.295397  22
+n                      0.620151      0.636698  22
+p                      0.624994      0.677047  22
+k                      0.006408      0.013057  22
+ph                     0.494064      0.517514  22
+Positive means values tend to rise together; negative means they tend to move in opposite directions.
+Near zero means little linear (Pearson) or rank (Spearman) relationship. These are not tests of causation.
+H0: equal population mean yields in the two rainfall groups. H1: different population mean yields.
+Rainfall split = 1312.03 mm, the sample median, not a recommended rainfall level.
+Lower/equal group: 11 records, mean = 2.871385. Higher group: 11 records, mean = 1.963327.
+Welch two-sided t-test: t = 3.398987, p = 0.00330847; cutoff = 0.05; Reject H0.
+95% interval for the mean difference: [0.345573, 1.470543].
+The groups show evidence of different mean yields under the test assumptions.
+The test assumes independent observations and approximately normal yields in the small groups.
+States can share conditions; they are not a random sample, and other differences are uncontrolled.
+2019 is used because 2020 has only 37 crop records. Findings concern this selected comparison.
+Weather is annual; soil has no year. Haryana and Punjab have identical supplied weather series.
+Fertilizer and pesticide per-area rates are shared within years, so their separate effects cannot be identified.
+Yield values are used as supplied; units and data collection methods were not independently verified.
+Do not conclude that reducing rainfall improves yield; irrigation and other possible explanations were not tested.

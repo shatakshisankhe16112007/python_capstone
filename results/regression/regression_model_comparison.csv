@@ -1,0 +1,9 @@
+model,split,observations,R2,Adjusted_R2,RMSE,MAE,MAPE_pct
+Baseline: Crop Mean,train,15268,0.8294,0.8294,0.6216,0.4669,235.08
+Baseline: Crop Mean,test,4213,0.7829,0.7828,0.6735,0.5127,268.78
+Model 1: Numeric Factors Only,train,15268,0.008,0.0079,1.4989,1.0335,292.68
+Model 1: Numeric Factors Only,test,4213,0.0147,0.014,1.4346,0.9935,360.95
+Model 2: Factors + Fixed Effects,train,15268,0.8659,0.8651,0.5511,0.4014,207.1
+Model 2: Factors + Fixed Effects,test,4213,0.8369,0.8334,0.5837,0.4164,235.9
+Model 3: Expanded Soil & Weather,train,15268,0.8663,0.8654,0.5503,0.4007,206.75
+Model 3: Expanded Soil & Weather,test,4213,0.8371,0.8333,0.5833,0.4169,237.48

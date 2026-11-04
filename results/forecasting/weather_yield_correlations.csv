@@ -1,0 +1,13 @@
+crop,weather_parameter,pearson_r,p_value,significant_at_05
+Rice,avg_temp_c,-0.0967,0.6606,No
+Rice,total_rainfall_mm,0.5978,0.0026,Yes
+Rice,avg_humidity_percent,-0.1293,0.5566,No
+Wheat,avg_temp_c,0.1325,0.5468,No
+Wheat,total_rainfall_mm,0.381,0.0729,No
+Wheat,avg_humidity_percent,-0.238,0.2742,No
+Maize,avg_temp_c,-0.1588,0.4692,No
+Maize,total_rainfall_mm,0.6455,0.0009,Yes
+Maize,avg_humidity_percent,-0.0483,0.8266,No
+Sugarcane,avg_temp_c,0.0315,0.8866,No
+Sugarcane,total_rainfall_mm,0.4084,0.053,No
+Sugarcane,avg_humidity_percent,-0.1861,0.3951,No

@@ -1,7 +1,7 @@
 import pandas as pd
 
 def load_dataset():
-    df = pd.read_csv(r"C:\Users\Admin\OneDrive\Desktop\CAPSTONE PROJECT\python_capstone\dataset\crop_yield.csv")
+    df = pd.read_csv("dataset/crop_yield.csv")
     return df
 
 def explore_dataset(df):
